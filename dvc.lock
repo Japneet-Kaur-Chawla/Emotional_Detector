@@ -50,23 +50,23 @@ stages:
       size: 208637555
       nfiles: 2
   model_building:
-    cmd: python3 src/models/model_building.py
+    cmd: python3 src/model/model_building.py
     deps:
     - path: data/processed/train_tfidf.csv
       hash: md5
       md5: 1ceb781d883eb223e8a3d3001f929342
       size: 166904404
-    - path: src/models/model_building.py
+    - path: src/model/model_building.py
       hash: md5
       md5: 12448dd003a84f7d3289bda3d2201701
       size: 2990
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 5c4c5c8bf2c979e6ad3b0e4ceb65b40e
-      size: 625141
+      md5: 857fe08582fd5c718bb3ef08ef259caa
+      size: 626149
   model_evaluation:
-    cmd: python3 src/models/model_evaluation.py
+    cmd: python3 src/model/model_evaluation.py
     deps:
     - path: data/processed/test_tfidf.csv
       hash: md5
@@ -74,14 +74,14 @@ stages:
       size: 41733151
     - path: models/model.pkl
       hash: md5
-      md5: 5c4c5c8bf2c979e6ad3b0e4ceb65b40e
-      size: 625141
-    - path: src/models/model_evaluation.py
+      md5: 857fe08582fd5c718bb3ef08ef259caa
+      size: 626149
+    - path: src/model/model_evaluation.py
       hash: md5
       md5: 1e6aaa3d09070fbd2c19a80591c9bed7
       size: 3291
     outs:
     - path: reports/metrics.json
       hash: md5
-      md5: add31764de0b8a736646a2e072af1b2b
+      md5: 80abc3d187881e4f5c75226ced748198
       size: 140
